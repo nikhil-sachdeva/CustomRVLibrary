@@ -15,7 +15,6 @@ RecyclerView list;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         list=findViewById(R.id.list);
-
     }
 
 
