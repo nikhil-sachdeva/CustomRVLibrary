@@ -1,4 +1,4 @@
-package com.example.customrecyclerviewlibrary;
+package com.example.nikhil.rvlibrary;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.Holder>{
+public class RVAdapter extends RecyclerView.Adapter<RVAdapter.Holder> {
     View view=null;
     ArrayList<Drawable> images= new ArrayList<>();
     String[] res=null;
