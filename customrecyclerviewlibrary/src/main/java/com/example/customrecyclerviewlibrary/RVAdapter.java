@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
+
 import java.util.ArrayList;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.Holder>{
@@ -63,12 +66,20 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.Holder>{
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int i) {
         holder.main_text.setText(res[i]);
+        String letter=res[i].charAt(0)+"";
         if(images!=null) {
             holder.img.setImageDrawable(images.get(i));
         }
         if(res2!=null) {
             holder.sub_text.setText(res2[i]);
         }
+
+        if(images==null){
+            ColorGenerator generator = ColorGenerator.MATERIAL;
+            TextDrawable drawable = TextDrawable.builder().buildRound(letter, generator.getRandomColor());
+            holder.letter.setImageDrawable(drawable);
+        }
+
     }
 
 
@@ -78,15 +89,18 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.Holder>{
     }
     class Holder extends RecyclerView.ViewHolder{
         TextView main_text,sub_text;
-        ImageView img;
+        ImageView img,letter;
         public Holder(@NonNull View itemView) {
             super(itemView);
             main_text=itemView.findViewById(R.id.main_text);
             sub_text=itemView.findViewById(R.id.sub_text);
             img=itemView.findViewById(R.id.img);
+            letter=itemView.findViewById(R.id.letter);
 
         }
     }
+
+
 
 
 }

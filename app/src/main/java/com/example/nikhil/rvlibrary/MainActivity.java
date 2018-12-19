@@ -20,12 +20,13 @@ RecyclerView list;
         list=findViewById(R.id.list);
         list.setHasFixedSize(true);
         list.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        String[] res={"Alpha","Beta","Gamma"};
-        String[] res2={"Alpha","Beta","Gamma"};
+        String[] res={"Cupcake","Lollipop","Oreo","Ice-cream Sandwich"};
+        String[] res2={"Version 1.5","Version 5.0","Version 8.0", "Version 4.0"};
         ArrayList<Drawable> images = new ArrayList<>();
-        images.add(getResources().getDrawable(R.drawable.ic_launcher_background));
-        images.add(getResources().getDrawable(R.drawable.ic_launcher_background));
-        images.add(getResources().getDrawable(R.drawable.ic_launcher_background));
+        images.add(getResources().getDrawable(R.drawable.cupcake));
+        images.add(getResources().getDrawable(R.drawable.lollipop));
+        images.add(getResources().getDrawable(R.drawable.oreo));
+        images.add(getResources().getDrawable(R.drawable.sandwich));
         RVAdapter rvAdapter = new RVAdapter(getApplicationContext(),res,res2,images);
 
         list.setAdapter(rvAdapter);
